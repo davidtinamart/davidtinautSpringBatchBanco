@@ -4,6 +4,6 @@ services:
     environment:
     - POSTGRES_DB=davidtinautSpringBatchBanco
     - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=Password
+    - POSTGRES_PASSWORD=david5
     ports:
-    - 5433:5432
+    - 5432:5432
