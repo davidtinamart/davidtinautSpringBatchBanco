@@ -1,7 +1,7 @@
 package batch.batch;
 
 
-import com.bigdata.batch.model.Transaction;
+import batch.model.Transaction;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
