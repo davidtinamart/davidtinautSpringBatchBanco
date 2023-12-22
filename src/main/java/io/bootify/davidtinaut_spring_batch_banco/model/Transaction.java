@@ -1,6 +1,6 @@
 package io.bootify.davidtinaut_spring_batch_banco.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity

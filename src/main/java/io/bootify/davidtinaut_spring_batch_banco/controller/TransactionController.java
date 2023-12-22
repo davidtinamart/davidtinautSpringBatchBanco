@@ -4,7 +4,9 @@ package io.bootify.davidtinaut_spring_batch_banco.controller;
 import io.bootify.davidtinaut_spring_batch_banco.model.Transaction;
 import io.bootify.davidtinaut_spring_batch_banco.service.TransactionService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.hibernate.StatelessSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +41,6 @@ public class TransactionController {
 
     @GetMapping("/test")
     public String getTest() {
-        return "test called works";
+        return "el test funciona";
     }
 }
