@@ -1,0 +1,6 @@
+step,type,amount,nameorig,oldbalanceorg,newbalanceorig,namedest,oldbalancedest,newbalancedest,isfraud,isflaggedfraud,id
+1,PAYMENT,1000.00,User1,10000.00,9000.00,Merchant1,0.00,0.00,0,0,1
+2,TRANSFER,500.50,User2,5000.50,4500.00,User3,0.00,500.50,0,0,2
+3,PAYMENT,200.75,User4,3000.25,2800.50,Merchant2,0.00,0.00,0,0,3
+4,TRANSFER,1500.00,User5,8000.00,6500.00,User6,0.00,1500.00,1,0,4
+5,CASH_OUT,300.25,User7,2000.00,1699.75,Merchant3,0.00,300.25,1,1,5
