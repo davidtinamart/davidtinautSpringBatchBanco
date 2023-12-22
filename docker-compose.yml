@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:16.1
     environment:
-    - POSTGRES_DB=davidtinautSpringBatchBanco
+    - POSTGRES_DB=batch_tinaut_db
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=david5
     ports:

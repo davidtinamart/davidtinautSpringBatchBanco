@@ -9,7 +9,7 @@
             <div class="d-flex flex-wrap mb-4">
                 <h1 class="flex-grow-1">[[#{transacciones.edit.headline}]]</h1>
                 <div>
-                    <a th:href="@{/transaccioness}" class="btn btn-secondary">[[#{transacciones.edit.back}]]</a>
+                    <a th:href="@{/transacciones}" class="btn btn-secondary">[[#{transacciones.edit.back}]]</a>
                 </div>
             </div>
             <div th:replace="~{fragments/forms::globalErrors('transacciones')}" />
@@ -17,9 +17,9 @@
                 <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='id', disabled=true, type='number')}" />
                 <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='fecha', inputClass='js-datepicker')}" />
                 <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='cantidad')}" />
-                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='tipotrans')}" />
-                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='cuentaorigen')}" />
-                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='cuentadestino')}" />
+                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='tipo', type='select')}" />
+                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='cuentaOrigen')}" />
+                <div th:replace="~{fragments/forms::inputRow(object='transacciones', field='cuentaDestino')}" />
                 <input type="submit" th:value="#{transacciones.edit.headline}" class="btn btn-primary mt-4" />
             </form>
         </div>
