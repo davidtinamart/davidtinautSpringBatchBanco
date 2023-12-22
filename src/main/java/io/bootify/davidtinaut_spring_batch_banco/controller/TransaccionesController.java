@@ -56,8 +56,8 @@ public class TransaccionesController {
 
     @PostMapping("/edit/{id}")
     public String edit(@PathVariable(name = "id") final Long id,
-            @ModelAttribute("transacciones") @Valid final TransaccionesDTO transaccionesDTO,
-            final BindingResult bindingResult, final RedirectAttributes redirectAttributes) {
+                       @ModelAttribute("transacciones") @Valid final TransaccionesDTO transaccionesDTO,
+                       final BindingResult bindingResult, final RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "transacciones/edit";
         }
@@ -68,7 +68,7 @@ public class TransaccionesController {
 
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable(name = "id") final Long id,
-            final RedirectAttributes redirectAttributes) {
+                         final RedirectAttributes redirectAttributes) {
         transaccionesService.delete(id);
         redirectAttributes.addFlashAttribute(WebUtils.MSG_INFO, WebUtils.getMessage("transacciones.delete.success"));
         return "redirect:/transaccioness";

@@ -49,7 +49,7 @@ public class TransaccionesService {
     }
 
     private TransaccionesDTO mapToDTO(final Transacciones transacciones,
-            final TransaccionesDTO transaccionesDTO) {
+                                      final TransaccionesDTO transaccionesDTO) {
         transaccionesDTO.setId(transacciones.getId());
         transaccionesDTO.setFecha(transacciones.getFecha());
         transaccionesDTO.setCantidad(transacciones.getCantidad());
@@ -60,7 +60,7 @@ public class TransaccionesService {
     }
 
     private Transacciones mapToEntity(final TransaccionesDTO transaccionesDTO,
-            final Transacciones transacciones) {
+                                      final Transacciones transacciones) {
         transacciones.setFecha(transaccionesDTO.getFecha());
         transacciones.setCantidad(transaccionesDTO.getCantidad());
         transacciones.setTipotrans(transaccionesDTO.getTipotrans());
