@@ -1,4 +1,5 @@
-package io.bootify.davidtinaut_spring_batch_banco.controller;
+package batch.controller;
+
 
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,26 +26,24 @@ public class LoadController {
     Job job;
 
     @GetMapping
-    public BatchStatus load() {
+    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, IOException {
 
         Map<String, JobParameter> maps = new HashMap<>();
         maps.put("time", new JobParameter(System.currentTimeMillis()));
         JobParameters parameters = new JobParameters(maps);
-        JobExecution jobExecution = null;
-        try {
-            jobExecution = jobLauncher.run(job, parameters);
-            System.out.println("Job's Status:::: " + jobExecution.getStatus() + " Time:" + System.currentTimeMillis());
-        } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
-            e.printStackTrace();
-        }
+        JobExecution jobExecution = jobLauncher.run(job, parameters);
 
-        System.out.println("JobExecution:::: " + jobExecution.getStatus());
+        System.out.println("Job Execution: " + jobExecution.getStatus() + jobExecution.getAllFailureExceptions() + "\n"
+                + jobExecution.getFailureExceptions() + jobExecution.getExitStatus()
+        );
 
-        System.out.println("Batch is Running...");
-        while (jobExecution.isRunning()) {
-            System.out.println("...");
-        }
+        System.out.println("We're done! Please check results");
 
         return jobExecution.getStatus();
+    }
+
+    @GetMapping("/test")
+    public String testString() {
+        return "test worked!";
     }
 }

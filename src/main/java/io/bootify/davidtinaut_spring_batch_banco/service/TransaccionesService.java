@@ -19,7 +19,7 @@ public class TransaccionesService {
     }
 
     public List<TransaccionesDTO> findAll() {
-        final List<Transacciones> transaccioneses = transaccionesRepository.findAll(Sort.by("id"));
+        final List<TransaccionesDTO> transaccioneses = transaccionesRepository.findAll(Sort.by("id"));
         return transaccioneses.stream()
                 .map(transacciones -> mapToDTO(transacciones, new TransaccionesDTO()))
                 .toList();
